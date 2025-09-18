@@ -20,7 +20,7 @@ sample_length_bytes = {
 
 SampleBlock = namedtuple(
     "SampleBlock",
-    field_names=["blockid", "sampleformat", "length_bytes", "num_samples"]
+    field_names=["blockid", "sampleformat", "length_bytes", "num_samples"],
 )
 
 
@@ -66,8 +66,12 @@ def main():
     project = AUP3ProjectWrapper(filename)
     silent_blocks = project.list_silent_blocks()
 
+    print("First 10 silent sample blocks")
+
     for block in silent_blocks[:10]:
         print(block)
+
+    print()
 
 
 if __name__ == "__main__":
